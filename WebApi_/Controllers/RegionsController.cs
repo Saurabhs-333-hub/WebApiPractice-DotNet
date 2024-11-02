@@ -42,11 +42,19 @@ namespace WebApi_.Controllers
         {
             //var region = dbContext.Regions.Find(Id);
             var region = dbContext.Regions.FirstOrDefault(e => e.Id == Id);
+           
             if (region == null)
             {
                 return NotFound();
             }
-            return Ok(region);
+            var regionDto = new RegionDTO
+            {
+                Id = region.Id,
+                Code = region.Code,
+                Name = region.Name,
+                RegionImageUrl = region.RegionImageUrl
+            };
+            return Ok(regionDto);
         }
     }
 }
