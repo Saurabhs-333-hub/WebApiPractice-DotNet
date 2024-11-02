@@ -4,3 +4,13 @@ GET {{WebApi__HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+POST {{WebApi__HostAddress}}/api/regions/
+Content-Type: application/json
+
+{
+  "code": "TR",
+  "name": "Testing Region",
+  "regionImageUrl": "www.google.com"
+}
+###
